@@ -8,7 +8,7 @@ let marker;
 let littleCube1, littleCube2, littleCube3, littleCube4, littleCube5;
 
 // movement speeds for the other cubes
-let movementSpeed = 0.01;
+let movementSpeed = 0.05;
 
 function setup() {
   // create our world (this also creates a p5 canvas for us)
@@ -23,15 +23,15 @@ function setup() {
   // -0.5, 0, -0.5 is the top left corner
   littleCube1 = new Box({
     x:-0.5, y:0.25, z:-0.5,
-    red:255, green:0, blue:0,
-    width:0.5, height:0.5, depth:0.5,
+    red:255, green:139, blue:0,
+    width:0.29, height:0.29, depth:0.29,
     asset:'stonebrick'
   });
   marker.addChild( littleCube1 );
 
   littleCube2 = new Box({
     x:0.5, y:0.25, z:-0.5,
-    red:0, green:255, blue:0,
+    red:18, green:231, blue:114,
     width:0.5, height:0.5, depth:0.5,
     asset:'stonebrick'
   });
@@ -39,35 +39,45 @@ function setup() {
 
   littleCube3 = new Box({
     x:-0.5, y:0.25, z:0.5,
-    red:0, green:0, blue:255,
-    width:0.5, height:0.5, depth:0.5,
+    red:38, green:110, blue:246,
+    width:0.4, height:0.4, depth:0.4,
     asset:'stonebrick'
   });
   marker.addChild( littleCube3 );
 
   littleCube4 = new Box({
     x:0.5, y:0.25, z:0.5,
-    red:128, green:128, blue:128,
-    width:0.5, height:0.5, depth:0.5,
+    red:228, green:41, blue:242,
+    width:0.4, height:0.4, depth:0.4,
     asset:'stonebrick'
   });
   marker.addChild( littleCube4 );
 
   littleCube5 = new Box({
-    x:0, y:1, z:0,
-    red:255, green:128, blue:0,
-    width:0.5, height:0.5, depth:0.5,
+    x:0, y:1.2, z:0,
+    red:255, green:211, blue:0,
+    width:0.6, height:0.6, depth:0.6,
     asset:'stonebrick'
   });
   marker.addChild( littleCube5 );
+
+  littleCube6 = new Box({
+    x:0.7, y:0.3, z:1,
+    red:255, green:1, blue:48,
+    width:0.3, height:0.3, depth:0.3,
+    asset:'stonebrick'
+  });
+  marker.addChild( littleCube6 );
 }
 
 
 function draw() {
   // spin the top cube
-  littleCube5.spinX(1);
-  littleCube5.spinY(1);
+  littleCube5.spinX(3);
+  littleCube5.spinY(2);
   littleCube5.spinZ(1);
+  littleCube6.spinZ(1);
+
 
   // move the other cubes around a bit
   littleCube1.nudge(0, movementSpeed, 0);
